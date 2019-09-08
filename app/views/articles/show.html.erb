@@ -1,3 +1,4 @@
+<%= render 'shared/flashes' %>
 <h4><%= @article.title %></h4>
 <p>
   <%= @article.description %>
@@ -6,5 +7,5 @@
   Created <%= time_ago_in_words(@article.created_at) %>
 </div>
 <div>
-  <%= link_to 'Home', articles_path %>  
+  <%= link_to 'Home', articles_path %>
 </div>
