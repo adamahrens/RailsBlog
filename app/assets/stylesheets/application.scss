@@ -2,6 +2,10 @@
 
 $red: #dd514c;
 
+@mixin border-on-bottom {
+  border-bottom: 1px solid #EEE;
+}
+
 .sidebar {
   background-color: rgb(61, 79, 93);
 
@@ -24,9 +28,9 @@ $red: #dd514c;
 }
 
 .content-subhead {
+  @include border-on-bottom;
   text-transform: uppercase;
   color: #AAA;
-  border-bottom: 1px solid #EEE;
   padding: 0.4em 0;
   font-size: 80%;
   font-weight: 500;
@@ -40,8 +44,8 @@ $red: #dd514c;
 }
 
 .post {
+  @include border-on-bottom;
   padding-bottom: 2em;
-  border-bottom: 1px solid #EEE;
 
   .post-title {
     font-size: 3em;
@@ -68,14 +72,15 @@ $red: #dd514c;
 }
 
 .article-form {
+  text-align: center;
+  padding-bottom: 20em;
+
   h1 {
     color: rgb(75, 75, 75);
     font-weight: 100;
     font-size: 400%;
     border-bottom: 1px solid #EEE;
   }
-  text-align: center;
-  padding-bottom: 20em;
 }
 
 .show {
