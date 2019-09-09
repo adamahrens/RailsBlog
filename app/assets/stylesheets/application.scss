@@ -96,6 +96,11 @@ $red: #dd514c;
   }
 }
 
+.button-error {
+  color: white;
+  background-color: $red;
+}
+
 .alert {
   text-align: right;
   margin-right: 0.5em;
@@ -104,4 +109,16 @@ $red: #dd514c;
 
 .alert-danger {
   color: $red;
+}
+
+.flash {
+  height: 30px;
+  padding: 0.4em;
+  font-weight: 200;
+  text-align: center;
+}
+
+.flash-success {
+  color: white;
+  background-color: rgb(28, 184, 65);
 }
