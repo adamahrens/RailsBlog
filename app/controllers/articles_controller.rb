@@ -1,12 +1,14 @@
-# frozen_string_literal
+# frozen_string_literal: true
+
+# Articles controller for fetching, creating, destroying Articles
 class ArticlesController < ApplicationController
+  before_action :set_article, only: %i[show edit update destroy]
+
   def index
     @articles = Article.recent
   end
 
-  def show
-    @article = Article.find(params[:id])
-  end
+  def show; end
 
   def new
     @article = Article.new
@@ -18,12 +20,32 @@ class ArticlesController < ApplicationController
       flash[:success] = 'Article created successfully'
       redirect_to articles_path
     else
-      flash[:danger] = 'Unable to create the Article'
       render 'new'
     end
   end
 
+  def edit; end
+
+  def update
+    if @article.update(article_params)
+      flash[:success] = 'Article updated successfully'
+      redirect_to article_path(@article)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    result = @article.destroy!
+    flash[:success] = "Article #{result.title} destroyed"
+    redirect_to articles_path
+  end
+
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     params.require(:article)

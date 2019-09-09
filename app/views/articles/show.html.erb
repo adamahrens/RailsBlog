@@ -7,5 +7,7 @@
   Created <%= time_ago_in_words(@article.created_at) %>
 </div>
 <div>
-  <%= link_to 'Home', articles_path %>
+  <%= link_to 'Home', articles_path %> |
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Delete', article_path(@article), method: :delete %>
 </div>

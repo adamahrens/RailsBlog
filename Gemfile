@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'meta_request', '~> 0.7.2'
   gem 'rb-readline', '~> 0.5.5'
 end
 
