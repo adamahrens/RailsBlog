@@ -1,5 +1,7 @@
 @import 'purecss';
 
+$red: #dd514c;
+
 .sidebar {
   background-color: rgb(61, 79, 93);
 
@@ -76,10 +78,25 @@
   padding-bottom: 20em;
 }
 
+.show {
+  padding-top: 8em;
+  padding-bottom: 20em;
+}
+
 .field_with_errors {
   display: inline;
 
   label {
-    color: #dd514c;
+    color: $red;
   }
+}
+
+.alert {
+  text-align: right;
+  margin-right: 0.5em;
+  padding-bottom: 0.4em;
+}
+
+.alert-danger {
+  color: $red;
 }

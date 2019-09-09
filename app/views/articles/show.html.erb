@@ -1,13 +1,21 @@
 <%= render 'shared/flashes' %>
-<h4><%= @article.title %></h4>
-<p>
-  <%= @article.description %>
-</p>
-<div>
-  Created <%= time_ago_in_words(@article.created_at) %>
-</div>
-<div>
-  <%= link_to 'Home', articles_path %> |
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-  <%= link_to 'Delete', article_path(@article), method: :delete %>
+<div class='show'>
+  <section class='post'>
+    <header class='post-header'>
+      <h2 class='post-title'><%= @article.title %></h2>
+      <p class="post-meta">
+        Created
+        <%= time_ago_in_words(@article.created_at) %>
+      </p>
+    </header>
+    <div class='post-description'>
+      <p>
+        <%= @article.description %>
+      </p>
+    </div>
+    <div class='actions'>
+      <%= link_to 'Edit', edit_article_path(@article), class: 'pure-button pure-button-primary' %>
+      <%= link_to 'Delete', article_path(@article), class: 'pure-button pure-button-primary', method: :delete %>
+    </div>
+  </section>
 </div>
