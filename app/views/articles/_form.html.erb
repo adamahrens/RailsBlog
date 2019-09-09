@@ -1,11 +1,16 @@
-<%= form_with model: article, local: true do |form| %>
+<%= form_with model: article, local: true, class: 'pure-form pure-form-aligned' do |form| %>
+<fieldset>
   <%= render 'shared/errors', model: article %>
-
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-
-  <%= form.label :description %>
-  <%= form.text_area :description %>
-
-  <%= form.submit 'Submit' %>
+  <div class="pure-control-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'pure-input-2-3' %>
+  </div>
+  <div class="pure-control-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'pure-input-2-3', rows: 12 %>
+  </div>
+  <div class="pure-control-group">
+    <%= form.submit 'Submit', class: 'pure-button pure-button-primary' %>
+  </div>
+</fieldset>
 <% end %>

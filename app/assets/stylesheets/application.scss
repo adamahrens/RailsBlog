@@ -1,0 +1,77 @@
+@import 'purecss';
+
+.sidebar {
+  background-color: rgb(61, 79, 93);
+
+  h1 {
+    color: #FFF;
+  }
+
+  h2 {
+    color: rgb(176, 202, 219);
+  }
+}
+
+.content {
+  padding-left: 100px;
+}
+
+.header {
+  margin: 70% 2em 0;
+  text-align: right;
+}
+
+.content-subhead {
+  text-transform: uppercase;
+  color: #AAA;
+  border-bottom: 1px solid #EEE;
+  padding: 0.4em 0;
+  font-size: 80%;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.posts {
+  h1 {
+    margin: 0.67em 0;
+  }
+}
+
+.post {
+  padding-bottom: 2em;
+
+  .post-title {
+    font-size: 3em;
+    color: #222;
+    margin-bottom: 0.2em;
+  }
+
+  .post-meta {
+    font-size: 90%;
+    color: #999;
+    margin: 0;
+  }
+
+  .post-description {
+    font-size: 1.2em;
+    font-family: Georgia, 'Cambria', serif;
+    color: #444;
+    line-height: 1.8em;
+  }
+
+  .actions {
+
+  }
+}
+
+.article-form {
+  h1 {
+    color: rgb(75, 75, 75);
+    font-weight: 100;
+    font-size: 400%;
+    border-bottom: 1px solid #EEE;
+  }
+
+  text-align: center;
+  padding-bottom: 20em;
+}

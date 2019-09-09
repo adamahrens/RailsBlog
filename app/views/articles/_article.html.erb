@@ -1,10 +1,17 @@
-<h4><%= article.title %></h4>
-<p>
-  <%= truncate(article.description, length: 20) %>
-</p>
-<div>
-  <%= link_to 'More', article_path(article) %>
-</div>
-<div>
-  Created <%= time_ago_in_words(article.created_at) %>
-</div>
+<section class='post'>
+  <header class='post-header'>
+    <h2 class='post-title'><%= article.title %></h2>
+    <p class="post-meta">
+      Created
+      <%= time_ago_in_words(article.created_at) %>
+    </p>
+  </header>
+  <div class='post-description'>
+    <p>
+      <%= truncate(article.description, length: 300) %>
+    </p>
+  </div>
+  <div class='actions'>
+    <%= link_to 'More', article_path(article), class: 'pure-button pure-button-primary' %>
+  </div>
+</section>
