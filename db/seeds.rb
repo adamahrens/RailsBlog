@@ -1,11 +1,19 @@
 require 'faker'
 
-8.times {
-  Article.create(title: Faker::Movies::Ghostbusters.character,
-                 description: Faker::Movies::Ghostbusters.quote)
-}
+5.times do
+  User.create(username: Faker::Internet.username, email: Faker::Internet.email)
+end
 
-10.times {
+8.times do
+  user = User.order('RANDOM()').first
+  Article.create(title: Faker::Movies::Ghostbusters.character,
+                 description: Faker::Movies::Ghostbusters.quote,
+                 user: user)
+end
+
+10.times do
+  user = User.order('RANDOM()').first
   Article.create(title: Faker::GreekPhilosophers.name,
-                 description: Faker::GreekPhilosophers.quote)
-}
+                 description: Faker::GreekPhilosophers.quote,
+                 user: user)
+end

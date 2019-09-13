@@ -2,8 +2,9 @@
   <header class='post-header'>
     <h2 class='post-title'><%= article.title %></h2>
     <p class="post-meta">
-      Created
+      Authored by <%= article.user.username %>
       <%= time_ago_in_words(article.created_at) %>
+      ago
     </p>
   </header>
   <div class='post-description'>

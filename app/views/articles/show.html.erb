@@ -3,6 +3,9 @@
   <section class='post'>
     <header class='post-header'>
       <h2 class='post-title'><%= @article.title %></h2>
+      <p class='post-meta'>
+        Authored by <%= @article.user.username %> @ <%= @article.user.email %>  
+      </p>
       <p class="post-meta">
         Created
         <%= time_ago_in_words(@article.created_at) %>
