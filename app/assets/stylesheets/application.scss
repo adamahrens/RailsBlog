@@ -25,6 +25,7 @@ $red: #dd514c;
 .header {
   margin: 70% 2em 0;
   text-align: right;
+  height: 300px;
 }
 
 .content-subhead {
@@ -121,4 +122,15 @@ $red: #dd514c;
 .flash-success {
   color: white;
   background-color: rgb(28, 184, 65);
+}
+
+.links {
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }

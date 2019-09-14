@@ -15,9 +15,20 @@
         <div class='header'>
           <h1 class='brand-title'>Adam's Blog</h1>
           <h2 class='brand-tagline'>A place to create articles for all to enjoy</h2>
-          <%= link_to 'New Article', new_article_path, class: 'pure-button pure-button-primary' %>
-          <%= link_to 'All', articles_path, class: 'pure-button pure-button-primary' %>
+          <div class='links'>
+            <ul>
+              <li>
+                <%= link_to 'New Article', new_article_path, class: 'pure-button pure-button-primary' %>
+              </li>
+              <li>
+                <%= link_to 'Articles', articles_path, class: 'pure-button pure-button-primary' %>
+              </li>
+              <li>
+                <%= link_to 'Signup', signup_path, class: 'pure-button pure-button-primary' %>
+              </li>
+            </ul>
           </div>
+        </div>
       </div>
       <div class='content pure-u-1 pure-u-md-1-2'>
         <%= yield %>

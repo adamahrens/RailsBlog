@@ -12,6 +12,9 @@
 #                           PATCH  /articles/:id(.:format)                                                                  articles#update
 #                           PUT    /articles/:id(.:format)                                                                  articles#update
 #                           DELETE /articles/:id(.:format)                                                                  articles#destroy
+#                    signup GET    /signup(.:format)                                                                        users#new
+#                     users POST   /users(.:format)                                                                         users#create
+#                  new_user GET    /users/new(.:format)                                                                     users#new
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -21,4 +24,7 @@
 Rails.application.routes.draw do
   root to: 'articles#index'
   resources :articles
+
+  get 'signup', to: 'users#new'
+  resources :users, only: %i[new create]
 end
