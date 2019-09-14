@@ -1,0 +1,19 @@
+<section class='post'>
+  <header class='post-header'>
+    <h2 class='post-title'><%= user.username %></h2>
+    <p class="post-meta">
+      Reach them at <%= user.email %>
+    </p>
+    <p class="post-meta">
+      Member since <%= time_ago_in_words(user.created_at) %> ago
+    </p>
+  </header>
+  <div class='post-description'>
+    <p>
+      <%= pluralize(user.articles.count, 'article') %>
+    </p>
+  </div>
+  <div class='actions'>
+    <%= link_to 'More', user_path(user), class: 'pure-button pure-button-primary' %>
+  </div>
+</section>

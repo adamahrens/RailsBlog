@@ -6,6 +6,16 @@ $red: #dd514c;
   border-bottom: 1px solid #EEE;
 }
 
+.user-header {
+  @include border-on-bottom;
+}
+
+.user-description {
+  h3 {
+    @include border-on-bottom;
+  }
+}
+
 .sidebar {
   background-color: rgb(61, 79, 93);
 
@@ -66,15 +76,16 @@ $red: #dd514c;
     color: #444;
     line-height: 1.8em;
   }
-
-  .actions {
-    padding-bottom: 0.75em;
-  }
 }
 
-.article-form {
+.actions {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+
+.custom-form {
   text-align: center;
-  padding-bottom: 20em;
+  padding-bottom: 25em;
 
   h1 {
     color: rgb(75, 75, 75);
