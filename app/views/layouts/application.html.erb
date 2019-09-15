@@ -12,6 +12,14 @@
   <body>
     <div class='pure-g'>
       <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class='user-actions'>
+          <% if logged_in? %>
+            <%= link_to 'Logout', logout_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Login', login_path %>
+            <%= link_to 'Sign Up', signup_path %>
+          <% end %>
+        </div>
         <div class='header'>
           <h1 class='brand-title'>Adam's Blog</h1>
           <h2 class='brand-tagline'>A place to create articles for all to enjoy</h2>
@@ -25,9 +33,6 @@
               </li>
               <li>
                 <%= link_to 'Users', users_path, class: 'pure-button pure-button-primary' %>
-              </li>
-              <li>
-                <%= link_to 'Signup', signup_path, class: 'pure-button pure-button-primary' %>
               </li>
             </ul>
           </div>

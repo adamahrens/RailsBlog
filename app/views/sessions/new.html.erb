@@ -1,0 +1,18 @@
+<div class='custom-form'>
+  <h1>Login</h1>
+  <%= form_with url: login_path, local: true, class: 'pure-form pure-form-aligned' do |form| %>
+  <fieldset>
+    <div class="pure-control-group">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: 'pure-input-2-3' %>
+    </div>
+    <div class="pure-control-group">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'pure-input-2-3' %>
+    </div>
+    <div class="pure-control-group">
+      <%= form.submit 'Login', class: 'pure-button pure-button-primary' %>
+    </div>
+  </fieldset>
+  <% end %>
+</div>

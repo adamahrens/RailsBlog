@@ -6,6 +6,31 @@ $red: #dd514c;
   border-bottom: 1px solid #EEE;
 }
 
+.user-actions {
+  @include border-on-bottom;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+
+  a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 10px;
+  }
+
+  a:hover {
+    color: rgb(176, 202, 219);
+  }
+}
+
 .user-header {
   @include border-on-bottom;
 }
@@ -133,6 +158,11 @@ $red: #dd514c;
 .flash-success {
   color: white;
   background-color: rgb(28, 184, 65);
+}
+
+.flash-error {
+  color: white;
+  background-color: $red;
 }
 
 .links {
