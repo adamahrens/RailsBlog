@@ -15,7 +15,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'User created successfully'
+      session[:user_id] = @user.id
+      cookies.encrypted[:username] = @user.username
+      cookies.encrypted[:email] = @user.email
+      flash[:success] = 'User created/logged in successfully'
       redirect_to articles_path
     else
       render 'new'
