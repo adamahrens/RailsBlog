@@ -27,9 +27,12 @@ class UsersController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    authorize @user
+  end
 
   def update
+    authorize @user
     if @user.update(user_params)
       flash[:success] = 'User updated successfully'
       redirect_to articles_path

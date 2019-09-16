@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pundit
+  protect_from_forgery
   helper_method :current_user, :logged_in?
 
   def current_user
@@ -7,12 +9,5 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user != nil
-  end
-
-  def user_required
-    unless logged_in?
-      flash[:error] = 'You must be logged in'
-      redirect_to root_path
-    end
   end
 end

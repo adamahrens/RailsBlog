@@ -13,11 +13,8 @@
     <div class='pure-g'>
       <div class="sidebar pure-u-1 pure-u-md-1-4">
         <div class='user-actions'>
-          <% if logged_in? %>
-            <%= link_to 'Logout', logout_path, method: :delete %>
-          <% else %>
-            <%= link_to 'Login', login_path %>
-            <%= link_to 'Sign Up', signup_path %>
+          <% navigation_items.each do |link| %>
+            <%= link %>
           <% end %>
         </div>
         <div class='header'>

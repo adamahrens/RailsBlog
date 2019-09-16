@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
     if @article.save
       flash[:success] = 'Article created successfully'
       redirect_to articles_path
@@ -24,9 +25,12 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @article
+  end
 
   def update
+    authorize @article
     if @article.update(article_params)
       flash[:success] = 'Article updated successfully'
       redirect_to article_path(@article)
@@ -36,6 +40,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize @article
     result = @article.destroy!
     flash[:success] = "Article #{result.title} destroyed"
     redirect_to articles_path

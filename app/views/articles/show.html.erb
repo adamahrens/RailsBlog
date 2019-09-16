@@ -4,7 +4,7 @@
     <header class='post-header'>
       <h2 class='post-title'><%= @article.title %></h2>
       <p class='post-meta'>
-        Authored by <%= @article.user.username %> @ <%= @article.user.email %>  
+        Authored by <%= @article.user.username %> @ <%= @article.user.email %>
       </p>
       <p class="post-meta">
         Created
@@ -17,8 +17,13 @@
       </p>
     </div>
     <div class='actions'>
-      <%= link_to 'Edit', edit_article_path(@article), class: 'pure-button pure-button-primary' %>
-      <%= link_to 'Delete', article_path(@article), class: 'pure-button button-error', method: :delete %>
+      <% if policy(@article).update? %>
+        <%= link_to 'Edit', edit_article_path(@article), class: 'pure-button pure-button-primary' %>
+      <% end %>
+
+      <% if policy(@article).destroy? %>
+        <%= link_to 'Delete', article_path(@article), class: 'pure-button button-error', method: :delete %>
+      <% end %>
     </div>
   </section>
 </div>
