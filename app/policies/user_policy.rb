@@ -7,7 +7,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    @user == @other
+    @user == @other || @user.admin?
   end
 
   def edit?
@@ -15,6 +15,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def destroy?
-    @user == @other
+    @user == @other || @user.admin?
   end
 end

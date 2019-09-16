@@ -15,6 +15,6 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def destroy?
-    @article.user == @user
+    @article.user == @user || @user.admin?
   end
 end

@@ -10,7 +10,9 @@
 #
 
 class User < ApplicationRecord
-  has_many :articles
+  has_many :articles, dependent: :destroy
+
+  enum role: { standard: 0, admin: 1 }
 
   has_secure_password
 

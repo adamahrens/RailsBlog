@@ -8,6 +8,9 @@
         Reach them at
         <%= @user.email %>
       </p>
+      <p class='post-meta'>
+        Role: <%= @user.role %>  
+      </p>
       <div class='actions'>
         <% if policy(@user).update? %>
           <%= link_to 'Edit', edit_user_path(@user), class: 'pure-button pure-button-primary' %>
