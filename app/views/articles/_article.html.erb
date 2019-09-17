@@ -2,7 +2,7 @@
   <header class='post-header'>
     <h2 class='post-title'><%= article.title %></h2>
     <p class="post-meta">
-      Authored by <%= article.user.username %>
+      Authored by <%= article&.user&.username %>
       <%= time_ago_in_words(article.created_at) %>
       ago
     </p>
