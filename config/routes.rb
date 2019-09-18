@@ -37,4 +37,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#login'
   delete 'logout', to: 'sessions#logout'
+
+  resources :categories, except: %i[destroy]
 end
