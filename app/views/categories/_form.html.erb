@@ -1,0 +1,12 @@
+<%= form_with model: category, local: true, class: 'pure-form pure-form-aligned' do |form| %>
+<fieldset>
+  <%= render 'shared/errors', model: category %>
+  <div class="pure-control-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'pure-input-2-3' %>
+  </div>
+  <div class="pure-control-group">
+    <%= form.submit 'Submit', class: 'pure-button pure-button-primary' %>
+  </div>
+</fieldset>
+<% end %>

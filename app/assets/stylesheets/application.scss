@@ -110,7 +110,7 @@ $red: #dd514c;
 
 .custom-form {
   text-align: center;
-  padding-bottom: 25em;
+  padding-bottom: 31em;
 
   h1 {
     color: rgb(75, 75, 75);
@@ -174,5 +174,25 @@ $red: #dd514c;
   li {
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+}
+
+.categories {
+  padding-top: 20px;
+  min-height: 1000px;
+}
+
+.category {
+  background-color: #4d85d1;
+  font-size: 1.1em;
+  padding: 0.5em;
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: #999;
+    }
   }
 }
