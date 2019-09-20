@@ -16,6 +16,9 @@
         <%= @article.description %>
       </p>
     </div>
+    <div class='post-categories'>
+      <%= render(partial: 'categories/category', collection: @article.categories) || 'No categories' %>
+      </div>
     <div class='actions'>
       <% if policy(@article).update? %>
         <%= link_to 'Edit', edit_article_path(@article), class: 'pure-button pure-button-primary' %>

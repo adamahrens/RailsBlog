@@ -13,6 +13,9 @@
 class Article < ApplicationRecord
   belongs_to :user
 
+  has_many :tags
+  has_many :categories, through: :tags
+
   validates :title, presence: true, length: { minimum: 5 }
   validates :description, presence: true, length: { minimum: 5 }
 

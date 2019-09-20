@@ -9,8 +9,16 @@
     <%= form.label :description %>
     <%= form.text_area :description, class: 'pure-input-2-3', rows: 12 %>
   </div>
-  <div class="pure-control-group">
-    <%= form.submit 'Submit', class: 'pure-button pure-button-primary' %>
-  </div>
+  <div class="pure-control-group flexing">
+    <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+        <%= b.label class:"pure-checkbox" do %>
+          <%= b.check_box %>
+          <%= content_tag :span, b.text, class: 'category-input' %>
+        <% end %>
+    <% end %>
+</div>
+<div class="pure-control-group">
+<%= form.submit 'Submit', class: 'pure-button pure-button-primary' %>
+</div>
 </fieldset>
 <% end %>

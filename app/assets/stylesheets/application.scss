@@ -6,6 +6,19 @@ $red: #dd514c;
   border-bottom: 1px solid #EEE;
 }
 
+.flexing {
+  display: flex;
+}
+
+.category-input {
+  padding-left: 3px;
+}
+
+.pure-checkbox  {
+  display: inline;
+  margin: 0.5em 0;
+}
+
 .user-actions {
   @include border-on-bottom;
 
@@ -101,6 +114,11 @@ $red: #dd514c;
     color: #444;
     line-height: 1.8em;
   }
+
+  .post-categories {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .actions {
@@ -186,9 +204,11 @@ $red: #dd514c;
   background-color: #4d85d1;
   font-size: 1.1em;
   padding: 0.5em;
+  border-radius: 2px;
 
   a {
     text-decoration: none;
+    text-transform: uppercase;
     color: white;
 
     &:hover {
