@@ -1,3 +1,30 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
-<%= link_to 'Edit', edit_category_path(@category), class: 'pure-button pure-button-primary' %>
+<div class='show'>
+  <section class='post'>
+    <header class='post-header'>
+      <h2 class='post-title'><%= @category.name %></h2>
+      <p class='post-meta'>
+        Authored by
+      </p>
+      <p class="post-meta">
+        Created
+        <%= time_ago_in_words(@category.created_at) %>
+      </p>
+    </header>
+    <div>
+      Found in Articles
+      <% @article_titles.each do |t| %>
+        <p><%= t %></p>
+      <% end %>
+      </div>
+      <hr />
+      <div>
+        Used by Users
+        <% @usernames.each do |u| %>
+          <p><%=u %></p>
+        <% end %>
+        </div>
+    <div class='actions'>
+      <%= link_to 'Edit', edit_category_path(@category), class: 'pure-button pure-button-primary' %>
+    </div>
+  </section>
+</div>

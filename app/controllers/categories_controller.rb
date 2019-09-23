@@ -19,7 +19,10 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @article_titles = @category.articles.pluck(:title)
+    @usernames = User.where(id: @category.articles.pluck(:user_id)).pluck(:username)
+  end
 
   def edit; end
 
